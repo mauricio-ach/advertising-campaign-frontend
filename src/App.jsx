@@ -6,14 +6,15 @@ import axios from "axios";
 import './styles/App.css'
 
 import Login from "./pages/Login";
+import Bar from "./components/Bar";
 
 function App() {
 
-  return (
-    <Router>
-        <MainApp />
-    </Router>
-  )
+    return (
+        <Router>
+            <MainApp />
+        </Router>
+    )
 }
 
 function MainApp() {
@@ -46,9 +47,20 @@ function MainApp() {
         <div className="container">
             <div><Notfications /></div>
             {isAuthenticated ? (
-                <div>Authenticated</div>
+                <div className="content-container">
+                    <div className="row">
+                        <div className="col-12">
+                            <Bar 
+                                setIsAuthenticated={setIsAuthenticated}
+                            />
+                        </div>
+                        <div className="col-12">
+                            l
+                        </div>
+                    </div>
+                </div>
             ) : (
-                <Login 
+                <Login
                     setIsAuthenticated={setIsAuthenticated}
                 />
             )}
@@ -60,7 +72,7 @@ const routes = ({ isAuthenticated }) => {
     return (
         <div>
             <Routes>
-                
+
             </Routes>
         </div>
     )
