@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react"
-import { BrowserRouter as Router, Routes, useNavigate } from "react-router-dom";
+import { Route, BrowserRouter as Router, Routes, useNavigate } from "react-router-dom";
 import { Notfications } from "./components/Notifications";
 import checkAuth from "./utils/checkAuth";
+import ProtectedRoute from "./components/ProtectedRoute";
 import axios from "axios";
 import './styles/App.css'
 
 import Login from "./pages/Login";
 import Bar from "./components/Bar";
+import Landing from "./pages/Landing";
 
 function App() {
 
@@ -47,16 +49,16 @@ function MainApp() {
         <div className="container">
             <div><Notfications /></div>
             {isAuthenticated ? (
-                <div className="content-container">
-                    <div className="row">
-                        <div className="col-12">
-                            <Bar 
-                                setIsAuthenticated={setIsAuthenticated}
-                            />
-                        </div>
-                        <div className="col-12">
-                            l
-                        </div>
+                <div className="row">
+                    <div className="col-12">
+                        <Bar
+                            setIsAuthenticated={setIsAuthenticated}
+                        />
+                    </div>
+                    <div className="col-12">
+                        <UserRoutes
+                            isAuthenticated={isAuthenticated}
+                        />
                     </div>
                 </div>
             ) : (
@@ -68,11 +70,19 @@ function MainApp() {
     )
 }
 
-const routes = ({ isAuthenticated }) => {
+const UserRoutes = ({ isAuthenticated }) => {
     return (
-        <div>
+        <div className="container">
             <Routes>
-
+                <Route
+                    path="/landing/:campaign_id"
+                    element={
+                        <ProtectedRoute
+                            element={<Landing />}
+                            isAuthenticated={isAuthenticated}
+                        />
+                    }
+                />
             </Routes>
         </div>
     )

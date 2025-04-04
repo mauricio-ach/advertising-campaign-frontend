@@ -11,7 +11,7 @@ const Bar = ({setIsAuthenticated}) => {
         <div className="container">
             <div className="row p-3">
                 <div className="col-6">
-                    <p>Bienvenido</p>
+                    <h4>Bienvenido</h4>
                 </div>
                 <div className="col-6 text-end">
                     <button className="btn btn-danger" onClick={handleLogout}>Salir</button>
