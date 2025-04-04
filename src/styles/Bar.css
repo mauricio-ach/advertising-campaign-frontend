@@ -1,0 +1,11 @@
+.bar-container {
+    margin: 2em 0;
+    border: 2px solid #3C3C3C;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.bar-container .row .col-6 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

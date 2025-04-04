@@ -46,10 +46,10 @@ function MainApp() {
     }, [navigate]);
 
     return (
-        <div className="container mb-5">
+        <div className="container">
             <div><Notfications /></div>
             {isAuthenticated ? (
-                <div className="row">
+                <div className="row mb-5">
                     <div className="col-12">
                         <Bar
                             setIsAuthenticated={setIsAuthenticated}

@@ -36,6 +36,9 @@ const Login = ({
     return (
         <div className="login-container">
             <form onSubmit={handleLogin}>
+                <div className='mb-3 text-center'>
+                    <h3>Iniciar sesión</h3>
+                </div>
                 <div className='mb-3'>
                     <label htmlFor="inputEmail1" className="form-label">Email</label>
                     <input 
@@ -61,7 +64,9 @@ const Login = ({
                         id="inputPassword" 
                     />
                 </div>
-                <button type='submit' className='btn btn-primary'>Entrar</button>
+                <div className='text-end'>
+                    <button type='submit' className='btn btn-primary'>Entrar</button>
+                </div>
             </form>
         </div>
     )

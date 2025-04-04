@@ -1,4 +1,5 @@
 import useLogout from "../hooks/useLogout";
+import "../styles/Bar.css";
 
 const Bar = ({setIsAuthenticated}) => {
 
@@ -8,7 +9,7 @@ const Bar = ({setIsAuthenticated}) => {
     }
 
     return (
-        <div className="container">
+        <div className="container bar-container">
             <div className="row p-3">
                 <div className="col-6">
                     <h4>Bienvenido</h4>
