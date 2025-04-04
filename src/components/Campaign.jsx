@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { formatDate, getRemainingDays, getTotalDays } from "../utils/dates";
+import { getInteractionRange, getPeopleRange } from "../utils/campaig";
 
 const Campaign = ({
     campaign_id,
@@ -60,6 +61,8 @@ const Campaign = ({
                                                 <th>Días restantes</th>
                                                 <th>Estado</th>
                                                 <th>Presupuesto</th>
+                                                <th>Alcance</th>
+                                                <th>Interacciones</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -91,6 +94,8 @@ const Campaign = ({
                                                     }
                                                 </td>
                                                 <td>${campaign.budget}</td>
+                                                <td>{getPeopleRange(campaign.budget)}</td>
+                                                <td>{getInteractionRange(campaign.budget)}</td>
                                             </tr>
                                         </tbody>
                                     </table>
