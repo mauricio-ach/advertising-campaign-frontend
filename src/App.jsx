@@ -35,7 +35,7 @@ function MainApp() {
             error => {
                 if (error.response?.status === 401) {
                     setIsAuthenticated(false);
-                    navigate("/");
+                    navigate("/landing");
                 }
                 return Promise.reject(error);
             }
@@ -46,7 +46,7 @@ function MainApp() {
     }, [navigate]);
 
     return (
-        <div className="container">
+        <div className="container mb-5">
             <div><Notfications /></div>
             {isAuthenticated ? (
                 <div className="row">
@@ -76,6 +76,24 @@ const UserRoutes = ({ isAuthenticated }) => {
             <Routes>
                 <Route
                     path="/landing/:campaign_id"
+                    element={
+                        <ProtectedRoute
+                            element={<Landing />}
+                            isAuthenticated={isAuthenticated}
+                        />
+                    }
+                />
+                <Route 
+                    path="/landing"
+                    element={
+                        <ProtectedRoute
+                            element={<Landing />}
+                            isAuthenticated={isAuthenticated}
+                        />
+                    }
+                />
+                <Route
+                    path="*"
                     element={
                         <ProtectedRoute
                             element={<Landing />}
