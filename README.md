@@ -1,12 +1,20 @@
-# React + Vite
+# Landing page para la administración de campañas publicitarias
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Requisitos
+- npm
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Instalación
+1. Clonar el repositorio utilizando git.
+2. Asegurarse que la rama main esté actualizada con el repositorio.
+3. Instalar dependencias con 
+    ```
+    npm i
+    ```
+4. Crear un archivo **.env** que contenga el siguiente valor, es importante que coincida con el host y puerto donde el API se encuentra escuchando, además que al utilizar VITE debe contener el prefijo forzosamente.
+    ```
+    VITE_BACKEND_URL={host/port} // Ejemplo http://localhost:3000
+    ```
+6. Ejecutar con:
+    ```
+    npm run dev
+    ```
